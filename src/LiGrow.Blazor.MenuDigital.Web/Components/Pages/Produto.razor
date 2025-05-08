@@ -1,0 +1,8 @@
+﻿@page "/produto/{slugproduto}"
+
+<h3>Detalhe do Produto @SlugProduto</h3>
+
+@code {
+   [Parameter]
+   public string? SlugProduto { get; set; }
+}

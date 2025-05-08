@@ -1,0 +1,104 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<style>
+   .categoria {
+      margin-bottom: 20px;
+   }
+
+      .categoria .titulo {
+         margin-bottom: 0px;
+      }
+
+      .categoria .descritivo {
+         margin-bottom: 0px;
+      }
+
+   .lista-menu-item {
+      display: flex;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      background-color: var(--main-background-color);
+      border: 1px solid var(--main-background-color);
+      border-radius: 0.5rem;
+   }
+
+      .lista-menu-item:hover {
+         border: 1px solid var(--main-theme-color);
+      }
+
+      .lista-menu-item a {
+          color: var(--main-text-color);
+          text-decoration: none;
+      }
+
+      .lista-menu-item img {
+         border-radius: 0.5rem 0 0 0.5rem;
+      }
+
+      .lista-menu-item .informacoes {
+         margin: 15px 15px;
+      }
+
+         .lista-menu-item .informacoes .titulo {
+            margin-bottom: 2px;
+         }
+
+      .lista-menu-item > .informacoes > .descritivo {
+         font-size: 14px;
+         margin-bottom: 5px;
+      }
+
+      .lista-menu-item .informacoes .preco {
+         font-size: 12px;
+      }
+</style>
+
+<div class="lista-categorias">
+   <div class="categoria">
+      <h2 class="titulo">Petiscos</h2>
+      <div class="lista-menu">
+         <div class="lista-menu-item">
+            <a href="/produto/tabua-mediteranea">
+               <img src="https://placehold.co/150x150?text=Foto+de+comida" alt="Foto de comida" />
+            </a>
+            <a href="/produto/tabua-mediteranea">
+               <div class="informacoes">
+                  <h5 class="titulo">Tábua Mediterrânea</h5>
+                  <p class="descritivo">Pão, Queijo da Serra e presunto curado 12 meses</p>
+                  <span class="preco text-muted">26.00€</span>
+               </div>
+            </a>
+         </div>
+         <div class="lista-menu-item">
+            <a href="/produto/tabua-mediteranea">
+               <img src="https://placehold.co/150x150?text=Foto+de+comida" alt="Foto de comida" />
+            </a>
+            <a href="/produto/tabua-mediteranea">
+               <div class="informacoes">
+                  <h5 class="titulo">Tábua Mediterrânea</h5>
+                  <p class="descritivo">Pão, Queijo da Serra e presunto curado 12 meses</p>
+                  <span class="preco text-muted">26.00€</span>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+
+   <div class="categoria">
+      <h2 class="titulo">Especiais</h2>
+      <p class="descritivo text-muted">Para gostos mais requintados</p>
+      <div class="lista-menu">
+         <div class="lista-menu-item">
+            <img src="https://placehold.co/150x150?text=Foto+de+comida" alt="Foto de comida" />
+            <div class="informacoes">
+               <h5 class="titulo">Cabrito assado</h5>
+               <p class="descritivo">Arroz de Miúdos, Batata Assada e Grelos</p>
+               <span class="preco text-muted">26.00€</span>
+            </div>
+         </div>
+      </div>
+   </div>
+
+</div>

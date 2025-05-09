@@ -1,6 +1,87 @@
 ﻿@page "/produto/{slugproduto}"
 
-<h3>Detalhe do Produto @SlugProduto</h3>
+<div class="produto-detalhe-container mb-3 p-2">
+   <nav class="" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb m-0">
+         <li class="breadcrumb-item"><a href="#">Início</a></li>
+         <li class="breadcrumb-item"><a href="#">Petiscos</a></li>
+         <li class="breadcrumb-item active text-muted" aria-current="page">Tábua Mediterrânea</li>
+      </ol>
+   </nav>
+</div>
+
+<div class="produto-detalhe-container pb-2">
+   @* <img src="/assets/images/menu/Tinela-27.jpg" alt="Tábua Mediterrânea" /> *@
+   <div class="carousel-w-thumbnails">
+      <div id="carouselExampleIndicators" class="carousel slide">
+         <div class="carousel-inner">
+            <div class="carousel-item active">
+               <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+               <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100" alt="...">
+            </div>
+         </div>
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+         </button>
+      </div>
+      <div class="thumnails-preview">
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
+            <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-27.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 2">
+            <img src="/assets/images/menu/Tinela-26.jpg" class="d-block w-100 img-fluid" alt="...">
+         </button>
+      </div>
+   </div>
+   <div class="informacoes">
+      <h5 class="titulo">Tábua Mediterrânea</h5>
+      <p class="descritivo">Pão, Queijo da Serra e presunto curado 12 meses</p>
+      <span class="preco text-muted">26.00€</span>
+   </div>
+</div>
 
 @code {
    [Parameter]

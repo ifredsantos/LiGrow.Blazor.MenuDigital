@@ -1,52 +1,65 @@
-﻿<div class="lista-categorias">
-   <div class="categoria">
-      <h2 class="titulo">Petiscos</h2>
-      <div class="lista-menu">
-         <div class="lista-menu-item">
-            <a href="/produto/tabua-mediteranea">
-               <img src="/assets/images/menu/Tinela-27.jpg" alt="Foto de comida" />
-            </a>
-            <a href="/produto/tabua-mediteranea">
-               <div class="informacoes">
-                  <h5 class="titulo">Tábua Mediterrânea</h5>
-                  <p class="descritivo">Pão, Queijo da Serra e presunto curado 12 meses</p>
-                  <span class="preco text-muted">26.00€</span>
-               </div>
-            </a>
-         </div>
-         <div class="lista-menu-item">
-            <a href="/produto/tabua-mediteranea">
-               <img src="/assets/images/menu/Tinela-26.jpg" alt="Foto de comida" />
-            </a>
-            <a href="/produto/tabua-mediteranea">
-               <div class="informacoes">
-                  <h5 class="titulo">Tábua Mediterrânea</h5>
-                  <p class="descritivo">Pão, Queijo da Serra e presunto curado 12 meses</p>
-                  <span class="preco text-muted">26.00€</span>
-               </div>
-            </a>
-         </div>
-      </div>
-   </div>
+﻿@using LiGrow.Blazor.MenuDigital.Web.Models
 
-   <div class="categoria">
-      <h2 class="titulo">Especiais</h2>
-      <p class="descritivo text-muted">Para gostos mais requintados</p>
-      <div class="lista-menu">
-         <div class="lista-menu-item">
-            <a href="/produto/cabrito-assado">
-               <img src="https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito" alt="Foto de cabrito" />
-            </a>
-            <a href="/produto/cabrito-assado">
-               <div class="informacoes">
-                  <h5 class="titulo">Cabrito assado</h5>
-                  <p class="descritivo">Arroz de Miúdos, Batata Assada e Grelos</p>
-                  <span class="preco text-muted">26.00€</span>
+<div class="lista-categorias">
+   @if (_listaCategorias != null && _listaCategorias.Count > 0)
+   {
+      foreach (var categoria in _listaCategorias)
+      {
+         List<MenuItem> produtos = new List<MenuItem>();
+         if (_listaMenus != null)
+         {
+            produtos = _listaMenus.FindAll(x => x.id_categoria == categoria.id);
+         }
+
+         <div class="categoria" id="categoria_@categoria.id">
+            <h2 class="titulo">@categoria.nome</h2>
+            @if (!string.IsNullOrEmpty(categoria.descricao))
+            {
+               <p class="descritivo text-muted">@categoria.descricao</p>
+            }
+
+            @if (produtos != null && produtos.Count > 0)
+            {
+               <div class="lista-menu">
+                  @foreach (var produto in produtos)
+                  {
+                     <div class="lista-menu-item">
+                        <a href="@produto.slug_menu">
+                           <img src="@produto.imagem" alt="@produto.nome" />
+                        </a>
+                        <a href="@produto.slug_menu">
+                           <div class="informacoes">
+                              <h5 class="titulo">@produto.nome</h5>
+                              <p class="descritivo">@produto.descricao</p>
+                              <span class="preco text-muted">@produto.preco€</span>
+                           </div>
+                        </a>
+                     </div>
+                  }
                </div>
-            </a>
+            }
          </div>
-      </div>
+      }
+   }
+
+   @* <div class="categoria" id="categoriaEspeciais">
+   <h2 class="titulo">Especiais</h2>
+   <p class="descritivo text-muted">Para gostos mais requintados</p>
+   <div class="lista-menu">
+   <div class="lista-menu-item">
+   <a href="/produto/cabrito-assado">
+   <img src="https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito" alt="Foto de cabrito" />
+   </a>
+   <a href="/produto/cabrito-assado">
+   <div class="informacoes">
+   <h5 class="titulo">Cabrito assado</h5>
+   <p class="descritivo">Arroz de Miúdos, Batata Assada e Grelos</p>
+   <span class="preco text-muted">26.00€</span>
    </div>
+   </a>
+   </div>
+   </div>
+   </div> *@
 </div>
 
 @code {

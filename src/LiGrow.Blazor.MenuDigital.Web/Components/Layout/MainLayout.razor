@@ -1,25 +1,41 @@
-﻿@inherits LayoutComponentBase
+﻿@using LiGrow.Blazor.MenuDigital.Web.Models
+@inherits LayoutComponentBase
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+   <div class="sidebar">
+      <NavMenu />
+   </div>
 
-    <main>
-        <div>
-            @*
-                Botão de login
-            *@
-        </div>
+   <main>
+      <div>
+         @*
+         Botão de login
+         *@
+      </div>
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
+      <article class="content px-4">
+         @{
+            List<CategoriaItem> categorias = WebApiCall.Categoria.ObterLista().GetAwaiter().GetResult();
+         }
+         @if (categorias != null)
+         {
+            <ul class="nav sticky-top">
+               @foreach (var categoria in categorias)
+               {
+                  <li class="nav-item">
+                     <a href="#categoria_@categoria.id">@categoria.nome</a>
+                  </li>
+               }
+            </ul>
+         }
+
+         @Body
+      </article>
+   </main>
 </div>
 
 <div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
+   An unhandled error has occurred.
+   <a href="" class="reload">Reload</a>
+   <a class="dismiss">🗙</a>
 </div>

@@ -20,5 +20,18 @@ namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
       {
          return FakerData.Product.ObterLista();
       }
+
+      [HttpGet("{slug}")]
+      public ActionResult<Product> GetBySlug(string slug)
+      {
+         var product = FakerData.Product.ObterLista().FindAll(x => x.slug.ToLower() == slug.ToLower());
+
+         if (product == null)
+         {
+            return NotFound();
+         }
+
+         return Ok(product);
+      }
    }
 }

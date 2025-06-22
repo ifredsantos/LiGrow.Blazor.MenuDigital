@@ -1,5 +1,21 @@
 ﻿@using LiGrow.Blazor.MenuDigital.Web.Models
+@using LiGrow.Blazor.MenuDigital.Web.Services
+@using LiGrow.Blazor.MenuDigital.Web.Services.Interfaces
 @inherits LayoutComponentBase
+
+@inject AppState AppState
+@inject ICategoryService CategoryService
+
+@code {
+   protected override async Task OnInitializedAsync()
+   {
+      if(!AppState.IsCategoriesLoaded)
+      {
+         var categories = await CategoryService.GetItemsAsync();
+         AppState.SetCategories(categories);
+      }
+   }
+}
 
 <div class="page">
    <div class="sidebar">
@@ -14,12 +30,14 @@
       </div>
 
       @{
-         List<CategoryItem> categorias = WebApiCall.Category.ObterLista().GetAwaiter().GetResult();
-      
-         if (categorias != null)
+         if(AppState.Categories == null && !AppState.IsCategoriesLoaded)
+         {
+            <p>A carregar categorias...</p>
+         }
+         else if (AppState.Categories != null)
          {
             <ul class="top-menu-categorias nav sticky-top">
-               @foreach (var categoria in categorias)
+               @foreach (var categoria in AppState.Categories)
                {
                   <li class="nav-item">
                      <a href="#categoria_@categoria.id">@categoria.name</a>

@@ -6,19 +6,19 @@ namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
 {
    [Route("api/[controller]")]
    [ApiController]
-   public class CategoryController : ControllerBase
+   public class ProductsController : ControllerBase
    {
-      private readonly ILogger<CategoryController> _logger;
+      private readonly ILogger<ProductsController> _logger;
 
-      public CategoryController(ILogger<CategoryController> logger)
+      public ProductsController(ILogger<ProductsController> logger)
       {
          _logger = logger;
       }
 
       [HttpGet]
-      public IEnumerable<Category> Get()
+      public IEnumerable<Product> Get()
       {
-         return FakerData.Category.ObterLista();
+         return FakerData.Product.ObterLista();
       }
    }
 }

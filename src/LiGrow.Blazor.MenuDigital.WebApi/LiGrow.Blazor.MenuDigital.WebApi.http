@@ -1,9 +1,9 @@
 @LiGrow.Blazor.MenuDigital.WebApi_HostAddress = http://localhost:5166
 
-GET {{LiGrow.Blazor.MenuDigital.WebApi_HostAddress}}/api/category/
+GET {{LiGrow.Blazor.MenuDigital.WebApi_HostAddress}}/api/categories/
 Accept: application/json
 
-GET {{LiGrow.Blazor.MenuDigital.WebApi_HostAddress}}/api/product/
+GET {{LiGrow.Blazor.MenuDigital.WebApi_HostAddress}}/api/products/
 Accept: application/json
 
 ###

@@ -1,14 +1,17 @@
 ﻿@using LiGrow.Blazor.MenuDigital.Web.Models
+@using LiGrow.Blazor.MenuDigital.Web.Services
+
+@inject AppState AppState
 
 <div class="lista-categorias">
-   @if (_listaCategorias != null && _listaCategorias.Count > 0)
+   @if (AppState.Categories != null && AppState.Categories.Count > 0)
    {
-      foreach (var categoria in _listaCategorias)
+      foreach (var categoria in AppState.Categories)
       {
          List<ProductItem> produtos = new List<ProductItem>();
-         if (_listaMenus != null)
+         if (productsList != null)
          {
-            produtos = _listaMenus.FindAll(x => x.category_id == categoria.id);
+            produtos = productsList.FindAll(x => x.category_id == categoria.id);
          }
 
          <div class="categoria" id="categoria_@categoria.id">

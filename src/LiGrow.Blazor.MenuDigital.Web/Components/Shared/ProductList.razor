@@ -5,17 +5,17 @@
    {
       foreach (var categoria in _listaCategorias)
       {
-         List<MenuItem> produtos = new List<MenuItem>();
+         List<ProductItem> produtos = new List<ProductItem>();
          if (_listaMenus != null)
          {
-            produtos = _listaMenus.FindAll(x => x.id_categoria == categoria.id);
+            produtos = _listaMenus.FindAll(x => x.category_id == categoria.id);
          }
 
          <div class="categoria" id="categoria_@categoria.id">
-            <h2 class="titulo">@categoria.nome</h2>
-            @if (!string.IsNullOrEmpty(categoria.descricao))
+            <h2 class="titulo">@categoria.name</h2>
+            @if (!string.IsNullOrEmpty(categoria.description))
             {
-               <p class="descritivo text-muted">@categoria.descricao</p>
+               <p class="descritivo text-muted">@categoria.description</p>
             }
 
             @if (produtos != null && produtos.Count > 0)
@@ -24,14 +24,14 @@
                   @foreach (var produto in produtos)
                   {
                      <div class="lista-menu-item">
-                        <a href="@produto.slug_menu">
-                           <img src="@produto.imagem" alt="@produto.nome" />
+                        <a href="@produto.slug">
+                           <img src="@produto.image" alt="@produto.name" />
                         </a>
-                        <a href="@produto.slug_menu">
+                        <a href="@produto.slug">
                            <div class="informacoes">
-                              <h5 class="titulo">@produto.nome</h5>
-                              <p class="descritivo">@produto.descricao</p>
-                              <span class="preco text-muted">@produto.preco€</span>
+                              <h5 class="titulo">@produto.name</h5>
+                              <p class="descritivo">@produto.description</p>
+                              <span class="preco text-muted">@produto.price€</span>
                            </div>
                         </a>
                      </div>

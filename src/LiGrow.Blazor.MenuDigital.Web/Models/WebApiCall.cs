@@ -2,19 +2,19 @@
 {
    public partial class WebApiCall
    {
-      public static class Categoria
+      public static class Category
       {
-         public static async Task<List<CategoriaItem>> ObterLista()
+         public static async Task<List<CategoryItem>> ObterLista()
          {
-            return await FakerData.Categoria.ObterLista();
+            return await FakerData.Category.ObterLista();
          }
       }
 
-      public static class Menu
+      public static class Product
       {
-         public static async Task<List<MenuItem>> ObterLista()
+         public static async Task<List<ProductItem>> ObterLista()
          {
-            return await FakerData.Menu.ObterLista();
+            return await FakerData.Product.ObterLista();
          }
       }
    }

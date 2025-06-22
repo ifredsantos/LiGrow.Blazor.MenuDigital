@@ -14,6 +14,28 @@ main {
     background-color: var(--main-background-color);
 }
 
+.top-menu-categorias {
+    background-color: var(--main-theme-color);
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    border-left: 4px solid rgba(0,0,0,0.1);
+    font-size: 20px;
+}
+
+    .top-menu-categorias li {
+        padding: 0px 20px;
+    }
+
+        .top-menu-categorias li a {
+            text-decoration: none;
+            color: var(--main-text-color);
+        }
+
+            .top-menu-categorias li a:hover {
+                text-decoration: underline;
+            }
+
 @media (max-width: 640.98px) {
 }
 

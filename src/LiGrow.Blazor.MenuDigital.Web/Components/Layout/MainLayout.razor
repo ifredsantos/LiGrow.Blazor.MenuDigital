@@ -13,21 +13,23 @@
          *@
       </div>
 
-      <article class="content px-4">
-         @{
-            List<CategoriaItem> categorias = WebApiCall.Categoria.ObterLista().GetAwaiter().GetResult();
-         }
-         @if (categorias != null)
+      @{
+         List<CategoryItem> categorias = WebApiCall.Category.ObterLista().GetAwaiter().GetResult();
+      
+         if (categorias != null)
          {
-            <ul class="nav sticky-top">
+            <ul class="top-menu-categorias nav sticky-top">
                @foreach (var categoria in categorias)
                {
                   <li class="nav-item">
-                     <a href="#categoria_@categoria.id">@categoria.nome</a>
+                     <a href="#categoria_@categoria.id">@categoria.name</a>
                   </li>
                }
             </ul>
          }
+      }
+
+      <article class="content px-4">
 
          @Body
       </article>

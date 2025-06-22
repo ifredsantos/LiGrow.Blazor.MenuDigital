@@ -2,115 +2,115 @@
 {
    public static class FakerData
    {
-      public class Categoria
+      public class Category
       {
-         public static async Task<List<CategoriaItem>> ObterLista()
+         public static async Task<List<CategoryItem>> ObterLista()
          {
             //await Task.Delay(1000); 
 
-            return new List<CategoriaItem>
+            return new List<CategoryItem>
             {
-               new CategoriaItem
+               new CategoryItem
                {
                   id = 1,
-                  nome = "Petiscos"
+                  name = "Petiscos"
                },
-               new CategoriaItem
+               new CategoryItem
                {
                   id = 2,
-                  nome = "Especiais",
-                  descricao = "Para gostos mais requintados"
+                  name = "Especiais",
+                  description = "Para gostos mais requintados"
                },
             };
          }
       }
-      public class Menu
+      public class Product
       {
-         public static async Task<List<MenuItem>> ObterLista()
+         public static async Task<List<ProductItem>> ObterLista()
          {
             //await Task.Delay(1000);
 
-            return new List<MenuItem>
+            return new List<ProductItem>
             {
-               new MenuItem
+               new ProductItem
                {
                   id = 1,
-                  id_categoria = 1,
-                  slug_menu = "/produto/tabua-mediteranea",
-                  nome = "Tábua Mediterrânea",
-                  descricao = "Pão, Queijo da Serra e presunto curado 12 meses",
-                  preco = 26,
-                  imagem = "/assets/images/menu/Tinela-27.jpg"
+                  category_id = 1,
+                  slug = "/produto/tabua-mediteranea",
+                  name = "Tábua Mediterrânea",
+                  description = "Pão, Queijo da Serra e presunto curado 12 meses",
+                  price = 26,
+                  image = "/assets/images/menu/Tinela-27.jpg"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 2,
-                  id_categoria = 1,
-                  slug_menu = "/produto/tabua-mediteranea",
-                  nome = "Tábua Mediterrânea",
-                  descricao = "Pão, Queijo da Serra e presunto curado 12 meses",
-                  preco = 26,
-                  imagem = "/assets/images/menu/Tinela-26.jpg"
+                  category_id = 1,
+                  slug = "/produto/tabua-mediteranea",
+                  name = "Tábua Mediterrânea",
+                  description = "Pão, Queijo da Serra e presunto curado 12 meses",
+                  price = 26,
+                  image = "/assets/images/menu/Tinela-26.jpg"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 3,
-                  id_categoria = 1,
-                  slug_menu = "/produto/tabua-mediteranea",
-                  nome = "Tábua Mediterrânea",
-                  descricao = "Pão, Queijo da Serra e presunto curado 12 meses",
-                  preco = 26,
-                  imagem = "/assets/images/menu/Tinela-27.jpg"
+                  category_id = 1,
+                  slug = "/produto/tabua-mediteranea",
+                  name = "Tábua Mediterrânea",
+                  description = "Pão, Queijo da Serra e presunto curado 12 meses",
+                  price = 26,
+                  image = "/assets/images/menu/Tinela-27.jpg"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 4,
-                  id_categoria = 2,
-                  slug_menu = "/produto/cabrito-assado",
-                  nome = "Cabrito assado",
-                  descricao = "Arroz de Miúdos, Batata Assada e Grelos",
-                  preco = 18.40m,
-                  imagem = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
+                  category_id = 2,
+                  slug = "/produto/cabrito-assado",
+                  name = "Cabrito assado",
+                  description = "Arroz de Miúdos, Batata Assada e Grelos",
+                  price = 18.40m,
+                  image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 5,
-                  id_categoria = 2,
-                  slug_menu = "/produto/cabrito-assado",
-                  nome = "Cabrito assado",
-                  descricao = "Arroz de Miúdos, Batata Assada e Grelos",
-                  preco = 18.40m,
-                  imagem = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
+                  category_id = 2,
+                  slug = "/produto/cabrito-assado",
+                  name = "Cabrito assado",
+                  description = "Arroz de Miúdos, Batata Assada e Grelos",
+                  price = 18.40m,
+                  image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 6,
-                  id_categoria = 2,
-                  slug_menu = "/produto/cabrito-assado",
-                  nome = "Cabrito assado",
-                  descricao = "Arroz de Miúdos, Batata Assada e Grelos",
-                  preco = 18.40m,
-                  imagem = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
+                  category_id = 2,
+                  slug = "/produto/cabrito-assado",
+                  name = "Cabrito assado",
+                  description = "Arroz de Miúdos, Batata Assada e Grelos",
+                  price = 18.40m,
+                  image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 7,
-                  id_categoria = 2,
-                  slug_menu = "/produto/cabrito-assado",
-                  nome = "Cabrito assado",
-                  descricao = "Arroz de Miúdos, Batata Assada e Grelos",
-                  preco = 18.40m,
-                  imagem = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
+                  category_id = 2,
+                  slug = "/produto/cabrito-assado",
+                  name = "Cabrito assado",
+                  description = "Arroz de Miúdos, Batata Assada e Grelos",
+                  price = 18.40m,
+                  image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new MenuItem
+               new ProductItem
                {
                   id = 8,
-                  id_categoria = 2,
-                  slug_menu = "/produto/cabrito-assado",
-                  nome = "Cabrito assado",
-                  descricao = "Arroz de Miúdos, Batata Assada e Grelos",
-                  preco = 18.40m,
-                  imagem = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
+                  category_id = 2,
+                  slug = "/produto/cabrito-assado",
+                  name = "Cabrito assado",
+                  description = "Arroz de Miúdos, Batata Assada e Grelos",
+                  price = 18.40m,
+                  image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
             };
          }

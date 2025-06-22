@@ -1,6 +1,6 @@
-﻿namespace LiGrow.Blazor.MenuDigital.Web.Models
+﻿namespace LiGrow.Blazor.MenuDigital.WebApi.Models
 {
-   public class ProductItem
+   public class Product
    {
       public int id { get; set; }
       public int category_id { get; set; }

@@ -1,21 +1,19 @@
-﻿namespace LiGrow.Blazor.MenuDigital.Web.Models
+﻿namespace LiGrow.Blazor.MenuDigital.WebApi.Models
 {
    public static class FakerData
    {
       public class Category
       {
-         public static async Task<List<CategoryItem>> ObterLista()
+         public static List<Models.Category> ObterLista()
          {
-            //await Task.Delay(1000); 
-
-            return new List<CategoryItem>
+            return new List<Models.Category>
             {
-               new CategoryItem
+               new Models.Category
                {
                   id = 1,
                   name = "Petiscos"
                },
-               new CategoryItem
+               new Models.Category
                {
                   id = 2,
                   name = "Especiais",
@@ -26,13 +24,13 @@
       }
       public class Product
       {
-         public static async Task<List<ProductItem>> ObterLista()
+         public static List<Models.Product> ObterLista()
          {
             //await Task.Delay(1000);
 
-            return new List<ProductItem>
+            return new List<Models.Product>
             {
-               new ProductItem
+               new Models.Product
                {
                   id = 1,
                   category_id = 1,
@@ -42,7 +40,7 @@
                   price = 26,
                   image = "/assets/images/menu/Tinela-27.jpg"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 2,
                   category_id = 1,
@@ -52,7 +50,7 @@
                   price = 26,
                   image = "/assets/images/menu/Tinela-26.jpg"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 3,
                   category_id = 1,
@@ -62,7 +60,7 @@
                   price = 26,
                   image = "/assets/images/menu/Tinela-27.jpg"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 4,
                   category_id = 2,
@@ -72,7 +70,7 @@
                   price = 18.40m,
                   image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 5,
                   category_id = 2,
@@ -82,7 +80,7 @@
                   price = 18.40m,
                   image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 6,
                   category_id = 2,
@@ -92,7 +90,7 @@
                   price = 18.40m,
                   image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 7,
                   category_id = 2,
@@ -102,7 +100,7 @@
                   price = 18.40m,
                   image = "https://placehold.co/150x150/000000/FFFFFF?text=Foto+de+cabrito"
                },
-               new ProductItem
+               new Models.Product
                {
                   id = 8,
                   category_id = 2,

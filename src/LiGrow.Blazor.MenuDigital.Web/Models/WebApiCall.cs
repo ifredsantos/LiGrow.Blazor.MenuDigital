@@ -6,7 +6,7 @@
       {
          public static async Task<List<CategoryItem>> ObterLista()
          {
-            return await FakerData.Category.ObterLista();
+            return null;
          }
       }
 
@@ -14,7 +14,7 @@
       {
          public static async Task<List<ProductItem>> ObterLista()
          {
-            return await FakerData.Product.ObterLista();
+            return null;
          }
       }
    }

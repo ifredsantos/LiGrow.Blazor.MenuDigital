@@ -11,8 +11,15 @@
    {
       if(!AppState.IsCategoriesLoaded)
       {
-         var categories = await CategoryService.GetItemsAsync();
-         AppState.SetCategories(categories);
+         try
+         {
+            var categories = await CategoryService.GetItemsAsync();
+            AppState.SetCategories(categories);
+         }
+         catch (Exception ex)
+         {
+            //TODO: Mostrar mensagem ao utilizador avisar da falha
+         }
       }
    }
 }

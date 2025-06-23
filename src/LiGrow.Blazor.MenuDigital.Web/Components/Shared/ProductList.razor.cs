@@ -14,7 +14,14 @@ namespace LiGrow.Blazor.MenuDigital.Web.Components.Shared
 
       protected override async Task OnInitializedAsync()
       {
-         productsList = await ProductService.GetItemsAsync();
+         try
+         {
+            productsList = await ProductService.GetItemsAsync();
+         }
+         catch (Exception ex)
+         {
+            //TODO: Mostrar mensagem ao utilizador avisar da falha
+         }
       }
    }
 }

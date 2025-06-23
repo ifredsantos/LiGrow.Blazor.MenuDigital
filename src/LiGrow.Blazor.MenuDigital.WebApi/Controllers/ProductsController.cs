@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
 {
    [Route("api/[controller]")]
-   [ApiController]
+   [ApiController, ApiKeyAuth]
    public class ProductsController : ControllerBase
    {
       private readonly ILogger<ProductsController> _logger;

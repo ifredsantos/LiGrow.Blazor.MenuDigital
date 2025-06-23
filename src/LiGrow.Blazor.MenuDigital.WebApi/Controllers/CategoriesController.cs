@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
 {
    [Route("api/[controller]")]
-   [ApiController]
+   [ApiController, ApiKeyAuth]
    public class CategoriesController : ControllerBase
    {
       private readonly ILogger<CategoriesController> _logger;
@@ -18,6 +18,7 @@ namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
       [HttpGet]
       public IEnumerable<Category> Get()
       {
+         throw new Exception("Teste!");
          return FakerData.Category.ObterLista();
       }
    }

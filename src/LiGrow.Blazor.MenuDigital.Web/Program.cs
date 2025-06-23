@@ -1,3 +1,4 @@
+using DotNetEnv;
 using LiGrow.Blazor.MenuDigital.Web.Components;
 using LiGrow.Blazor.MenuDigital.Web.Services;
 using LiGrow.Blazor.MenuDigital.Web.Services.Interfaces;
@@ -10,13 +11,19 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddScoped<AppState>();
 
+Env.Load();
+
+var apiKey = Environment.GetEnvironmentVariable("API_SECRET_KEY");
+
 builder.Services.AddHttpClient<ICategoryService, CategoryService>(client =>
 {
    client.BaseAddress = new Uri("https://localhost:44353");
+   client.DefaultRequestHeaders.Add("X-API-KEY", apiKey);
 });
 builder.Services.AddHttpClient<IProductService, ProductService>(client =>
 {
    client.BaseAddress = new Uri("https://localhost:44353");
+   client.DefaultRequestHeaders.Add("X-API-KEY", apiKey);
 });
 
 var app = builder.Build();

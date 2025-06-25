@@ -1,7 +1,18 @@
 ﻿@page "/"
+@page "/tracking/{TrackingIdentifier}"
 
 @using LiGrow.Blazor.MenuDigital.Web.Components.Shared
 
 <PageTitle>Home</PageTitle>
 
 <ProductList />
+
+@code {
+   [Parameter]
+   public string? TrackingIdentifier { get; set; }
+
+   protected override async Task OnInitializedAsync()
+   {
+      //https://menu.tinella.pt/tracking/parceiro1
+   }
+}

@@ -18,7 +18,6 @@ namespace LiGrow.Blazor.MenuDigital.WebApi.Controllers
       [HttpGet]
       public IEnumerable<Category> Get()
       {
-         throw new Exception("Teste!");
          return FakerData.Category.ObterLista();
       }
    }

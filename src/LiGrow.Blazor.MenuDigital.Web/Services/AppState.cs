@@ -6,6 +6,7 @@ namespace LiGrow.Blazor.MenuDigital.Web.Services
    {
       public List<CategoryItem>? Categories { get; private set; }
       public bool IsCategoriesLoaded => Categories?.Any() == true;
+      public string? CategoriesError { get; set; }
 
       public void SetCategories(List<CategoryItem> categories)
       {

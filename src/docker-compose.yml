@@ -14,9 +14,6 @@ services:
       timeout: 10s
       interval: 30s
       retries: 5
-    depends_on:
-      db:
-        condition: service_started
     networks:
       - app-network
     ports:
@@ -38,7 +35,7 @@ services:
       interval: 30s
       retries: 5
     depends_on:
-      db:
+      webapi:
         condition: service_started
     networks:
       - app-network

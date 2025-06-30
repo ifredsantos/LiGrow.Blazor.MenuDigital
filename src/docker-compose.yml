@@ -1,0 +1,53 @@
+services:
+  webapi:
+    build:
+      context: ./LiGrow.Blazor.MenuDigital.WebApi
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      API_SECRET_KEY: MZo8TQQm61tTdVnP68MHKU2UHBosFLNR
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+      timeout: 10s
+      interval: 30s
+      retries: 5
+    depends_on:
+      db:
+        condition: service_started
+    networks:
+      - app-network
+    ports:
+      - "8081:80"
+  website:
+    build:
+      context: ./LiGrow.Blazor.MenuDigital.Web
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      API_URL: https://api.menu.tinella.pt
+      API_SECRET_KEY: MZo8TQQm61tTdVnP68MHKU2UHBosFLNR
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - -f
+      timeout: 10s
+      interval: 30s
+      retries: 5
+    depends_on:
+      db:
+        condition: service_started
+    networks:
+      - app-network
+    ports:
+      - "8080:80"
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  tinella-db-data:

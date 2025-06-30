@@ -3,8 +3,8 @@ version: '3.8'
 services:
   webapi:
     build:
-      context: ./LiGrow.Blazor.MenuDigital.WebApi
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: src/LiGrow.Blazor.MenuDigital.WebApi/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Production
       API_SECRET_KEY: MZo8TQQm61tTdVnP68MHKU2UHBosFLNR
@@ -20,8 +20,8 @@ services:
 
   website:
     build:
-      context: ./LiGrow.Blazor.MenuDigital.Web
-      dockerfile: Dockerfile
+      context: ../
+      dockerfile: src/LiGrow.Blazor.MenuDigital.Web/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Production
       API_URL: https://api.menu.tinella.pt

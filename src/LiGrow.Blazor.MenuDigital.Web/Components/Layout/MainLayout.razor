@@ -1,72 +1,7 @@
-﻿@using LiGrow.Blazor.MenuDigital.Web.Models
-@using LiGrow.Blazor.MenuDigital.Web.Services
-@using LiGrow.Blazor.MenuDigital.Web.Services.Interfaces
-@inherits LayoutComponentBase
-
-@inject AppState AppState
-@inject ICategoryService CategoryService
-
-@code {
-   protected override async Task OnInitializedAsync()
-   {
-      if (!AppState.IsCategoriesLoaded)
-      {
-         try
-         {
-            var categories = await CategoryService.GetItemsAsync();
-            AppState.SetCategories(categories);
-         }
-         catch (Exception ex)
-         {
-            AppState.CategoriesError = "Não foi possível carregar as categorias";
-            //TODO: Mostrar mensagem ao utilizador avisar da falha
-         }
-      }
-   }
-}
+﻿@inherits LayoutComponentBase
 
 <div class="page">
-   <div class="sidebar">
-      <NavMenu />
-   </div>
-
-   <main>
-      <div>
-         @*
-         Botão de login
-         *@
-      </div>
-
-      @{
-         if (AppState.Categories == null && !AppState.IsCategoriesLoaded && string.IsNullOrEmpty(AppState.CategoriesError))
-         {
-            <div class="placeholder-glow">
-               <ul class="top-menu-categorias nav sticky-top placeholder">
-               </ul>
-            </div>
-         }
-         else if (!string.IsNullOrEmpty(AppState.CategoriesError))
-         {
-            <p>Ocorreu um erro a carregar as categorias.</p>
-         }
-         else if (AppState.Categories != null)
-         {
-            <ul class="top-menu-categorias nav sticky-top">
-               @foreach (var categoria in AppState.Categories)
-               {
-                  <li class="nav-item">
-                     <a href="#categoria_@categoria.id">@categoria.name</a>
-                  </li>
-               }
-            </ul>
-         }
-      }
-
-      <article class="content px-4">
-
-         @Body
-      </article>
-   </main>
+   @Body
 </div>
 
 <div id="blazor-error-ui">

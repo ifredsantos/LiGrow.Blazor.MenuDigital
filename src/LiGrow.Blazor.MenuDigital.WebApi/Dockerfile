@@ -11,7 +11,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["LiGrow.Blazor.MenuDigital.WebApi/LiGrow.Blazor.MenuDigital.WebApi.csproj", "LiGrow.Blazor.MenuDigital.WebApi/"]
+COPY ["src/LiGrow.Blazor.MenuDigital.WebApi/LiGrow.Blazor.MenuDigital.WebApi.csproj", "src/LiGrow.Blazor.MenuDigital.WebApi/"]
 RUN dotnet restore "./LiGrow.Blazor.MenuDigital.WebApi/LiGrow.Blazor.MenuDigital.WebApi.csproj"
 COPY . .
 WORKDIR "/src/LiGrow.Blazor.MenuDigital.WebApi"

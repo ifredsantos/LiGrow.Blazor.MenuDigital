@@ -1,18 +1,12 @@
-﻿@page "/"
-@page "/tracking/{TrackingIdentifier}"
+﻿@using LiGrow.Blazor.MenuDigital.Web.Components.Layout
 
-@using LiGrow.Blazor.MenuDigital.Web.Components.Shared
+@layout EmptyLayout;
+@page "/"
 
-<PageTitle>Home</PageTitle>
+<h1>Bem vindo ao Restaurante Tinella</h1>
 
-<ProductList />
+<a href="/menu" class="btn btn-outline-info">Entrar</a>
 
 @code {
-   [Parameter]
-   public string? TrackingIdentifier { get; set; }
 
-   protected override async Task OnInitializedAsync()
-   {
-      //https://menu.tinella.pt/tracking/parceiro1
-   }
 }

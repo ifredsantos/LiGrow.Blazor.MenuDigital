@@ -14,7 +14,7 @@ services:
     networks:
       - app-network
     ports:
-      - "8089:80"
+      - "8090:80"
 
   website:
     build:
@@ -34,7 +34,7 @@ services:
     networks:
       - app-network
     ports:
-      - "8088:80"
+      - "8091:80"
 
 networks:
   app-network:
